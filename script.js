@@ -1,28 +1,30 @@
-const myTable = document.getElementById("myTable");
-let trList = document.querySelectorAll("tr");
-let btnList = document.querySelectorAll("button");
-let inptList = document.querySelectorAll("input");
+let btnList = document.querySelectorAll(".btn");
+console.log(btnList);
 
-for (let i = 0; i < trList.length - 1; i++) {
-  const btn = document.querySelector("button");
-  btn.addEventListener("click", function () {
-    document.querySelector("input").style.display = "none";
-  });
-}
-
-// trList.forEach(function (i) {
-//   const btn = document.querySelector("button");
-//   (function singlItter(index) {
-//     btn.addEventListener("click", function () {
-//       document.querySelector("input").style.display = "none";
-//       console.log(index);
-//     });
-//   })(i);
-//   myTable.appendChild(btn);
-// });
-
-// btnList.forEach(function (e) {
-//   e.addEventListener("click", function () {
-//     document.querySelector(inptList[i]).style.display = "none";
+// btnList.forEach((element) => {
+//   element.addEventListener("click", () => {
+//     let currentRow = element.parentNode;
+//     let currentInput = currentRow.querySelector("input");
+//     if (currentInput.style.display === "none") {
+//       currentInput.style.display = "block";
+//     } else {
+//       currentInput.style.display = "none";
+//     }
 //   });
 // });
+
+let tdList = document.querySelectorAll("td");
+let disp = document.querySelector("input");
+
+tdList.forEach((element) => {
+  let currentBtn = element.childNodes[1];
+  console.log(element.childNodes[0]);
+  let currentDisp = element.childNodes[2];
+  currentBtn.addEventListener("click", () => {
+    if (currentDisp.style.display === "none") {
+      currentDisp.style.display = "block";
+    } else {
+      currentDisp.style.display = "none";
+    }
+  });
+});

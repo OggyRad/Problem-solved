@@ -1,3 +1,7 @@
-.myHide {
-  display: none;
+td {
+  display: flex;
+}
+
+input {
+  display: block;
 }
